@@ -1,7 +1,7 @@
 import logo from "./Images/logo.svg";
 import "./App.css";
-import Left from "./Left";
-import Right from "./Right";
+import Left from "./Components/Left";
+import Right from "./Components/Right";
 
 function App() {
   return (
