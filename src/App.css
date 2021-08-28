@@ -1,0 +1,148 @@
+:root {
+  --strong-cyan: hsl(172, 67%, 45%);
+  --dark-cyan: hsl(183, 100%, 15%);
+  --dark-grayish-cyan: hsl(186, 14%, 43%);
+  --semi-dark-grayish-cyan: hsl(184, 14%, 56%);
+  --medium-grayish-cyan: hsl(185, 41%, 84%);
+  --light-grayish-cyan: hsl(189, 41%, 97%);
+  --orangey: hsl(9, 60%, 68%);
+}
+
+.App {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  min-height: 100vh;
+  justify-content: center;
+  flex-direction: column;
+
+  font-family: "Space Mono", monospace;
+  font-size: 18px;
+  font-weight: 700;
+
+  color: var(--dark-grayish-cyan);
+  background-color: var(--medium-grayish-cyan);
+}
+
+.App-logo {
+  pointer-events: none;
+}
+
+/* @media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+} */
+
+.App-header {
+  /* width: 100%;
+  height: 100%; */
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.container {
+  background-color: white;
+  border-radius: 15px;
+  display: flex;
+  width: 70%;
+  padding: 32px;
+  margin: 16px;
+}
+
+.left-container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 16px;
+}
+
+.right-container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  background-color: var(--dark-cyan);
+  border-radius: 10px;
+  padding: 16px;
+  color: var(--light-grayish-cyan);
+}
+
+.label {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin-bottom: 24px;
+}
+
+.input-container {
+  display: flex;
+  flex: 1;
+  padding: 4px 16px;
+  margin-top: 8px;
+  align-items: center;
+  justify-content: space-between;
+  border: none;
+  background-color: var(--light-grayish-cyan);
+  border-radius: 5px;
+}
+
+.label input {
+  flex: 1;
+  padding: 4px;
+  border: none;
+  background-color: var(--light-grayish-cyan);
+  text-align: right;
+  font-family: "Space Mono", monospace;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--dark-cyan);
+}
+
+.label input:focus {
+  outline: none;
+}
+
+.right-container small {
+  color: var(--light-grayish-cyan);
+}
+
+.tip-container {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.tip-container button,
+input {
+  width: 30%;
+  height: 50%;
+  margin: 4px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: var(--light-grayish-cyan);
+  background-color: var(--dark-cyan);
+  font-family: "Space Mono", monospace;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.tip-container input {
+  box-sizing: border-box;
+  color: var(--dark-cyan);
+  text-align: center;
+  max-width: 30%;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
