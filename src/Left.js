@@ -20,6 +20,7 @@ const Left = () => {
           <button>15%</button>
           <button>20%</button>
           <button>25%</button>
+
           <input type="text" name="custom" placeholder="Custom" />
         </div>
       </label>
