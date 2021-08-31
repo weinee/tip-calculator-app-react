@@ -52,26 +52,20 @@
   margin: 16px;
 }
 
+/* Left Container */
+
 .left-container {
   display: flex;
   flex: 1;
   flex-direction: column;
   padding: 16px;
-}
+  margin-right: 32px;
 
-.right-container {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  background-color: var(--dark-cyan);
-  border-radius: 10px;
-  padding: 16px;
-  color: var(--light-grayish-cyan);
+  justify-content: space-around;
 }
 
 .label {
   display: flex;
-  flex: 1;
   flex-direction: column;
   margin-bottom: 24px;
 }
@@ -89,7 +83,6 @@
 
 .input-container {
   display: flex;
-  flex: 1;
   padding: 4px 16px;
   margin-top: 8px;
   align-items: center;
@@ -164,6 +157,51 @@ input {
 .tip-container input:focus-within,
 .input-container:focus-within {
   border: solid var(--strong-cyan);
+}
+
+/* Right Container */
+
+.right-container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  background-color: var(--dark-cyan);
+  border-radius: 10px;
+  padding: 32px;
+  color: var(--light-grayish-cyan);
+}
+
+.right-container button {
+  background-color: var(--strong-cyan);
+  border: none;
+  margin: 48px 16px 24px 16px;
+  padding: 16px;
+  color: var(--dark-cyan);
+  font-weight: 700;
+  font-size: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.right-container button:disabled {
+  cursor: not-allowed;
+  background-color: var(--dark-grayish-cyan);
+}
+
+.row {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.row small {
+  color: var(--semi-dark-grayish-cyan);
+}
+
+.row h1 {
+  color: var(--strong-cyan);
+  font-size: 50px;
 }
 
 @keyframes App-logo-spin {
