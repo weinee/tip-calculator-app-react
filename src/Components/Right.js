@@ -1,6 +1,44 @@
-import React from "react";
+import { observer } from "mobx-react-lite";
+import React, { useEffect } from "react";
+import { calcStore } from "../store";
 
 const Right = () => {
+  const {
+    bill,
+    setBill,
+    tip,
+    setTip,
+    noOfPeople,
+    setNoOfPeople,
+    tipAmount,
+    setTipAmount,
+    total,
+    setTotal,
+  } = calcStore;
+
+  useEffect(() => {
+    if (
+      bill !== 0 &&
+      bill !== "" &&
+      tip !== 0 &&
+      noOfPeople !== 0 &&
+      noOfPeople !== ""
+    ) {
+      const amount = (bill * (tip / 100)) / noOfPeople;
+      const totalPerPerson = bill / noOfPeople + amount;
+      setTipAmount(amount);
+      setTotal(totalPerPerson);
+    }
+  }, [bill, tip, noOfPeople]);
+
+  const reset = () => {
+    setBill(0);
+    setTip(0);
+    setNoOfPeople(0);
+    setTipAmount(0);
+    setTotal(0);
+  };
+
   return (
     <div className="right-container">
       <div className="row">
@@ -9,7 +47,7 @@ const Right = () => {
           <br />
           <small>/person</small>
         </div>
-        <h1>$0.00</h1>
+        <h1>${tipAmount.toFixed(2)}</h1>
       </div>
 
       <div className="row">
@@ -18,12 +56,12 @@ const Right = () => {
           <br />
           <small>/person</small>
         </div>
-        <h1>$0.00</h1>
+        <h1>${total.toFixed(2)}</h1>
       </div>
 
-      <button onClick={() => {}}>RESET</button>
+      <button onClick={reset}>RESET</button>
     </div>
   );
 };
 
-export default Right;
+export default observer(Right);

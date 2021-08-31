@@ -1,13 +1,23 @@
-import React, { useState } from "react";
+import { observer } from "mobx-react-lite";
+import React from "react";
+
 import dollarIcon from "../Images/icon-dollar.svg";
 import personIcon from "../Images/icon-person.svg";
+import { calcStore } from "../store";
 
 const Left = () => {
-  const [bill, setBill] = useState("");
-  const [tip, setTip] = useState("");
-  const [noOfPeople, setNoOfPeople] = useState("");
-  const [customTip, setCustomTip] = useState("");
-  const [error, setError] = useState(false);
+  const {
+    bill,
+    setBill,
+    tip,
+    setTip,
+    noOfPeople,
+    setNoOfPeople,
+    customTip,
+    setCustomTip,
+    error,
+    setError,
+  } = calcStore;
 
   function onChangePeople(e) {
     if (e.target.value === "0") {
@@ -116,4 +126,4 @@ const Left = () => {
   );
 };
 
-export default Left;
+export default observer(Left);
