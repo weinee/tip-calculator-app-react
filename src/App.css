@@ -109,6 +109,16 @@
   outline: none;
 }
 
+.label input::-webkit-outer-spin-button,
+.label input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.label input[type="number"] {
+  -moz-appearance: textfield;
+}
+
 .right-container small {
   color: var(--light-grayish-cyan);
 }
