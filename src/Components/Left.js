@@ -19,6 +19,7 @@ const Left = () => {
     setError,
     billError,
     setBillError,
+    setDisabled,
   } = calcStore;
 
   function onChangePeople(e) {
@@ -28,6 +29,7 @@ const Left = () => {
       setError(false);
       if (e.target.validity.valid) {
         setNoOfPeople(e.target.value);
+        setDisabled(false);
       }
     }
   }
@@ -39,6 +41,7 @@ const Left = () => {
       setBillError(false);
       if (e.target.validity.valid) {
         setBill(e.target.value);
+        setDisabled(false);
       }
     }
   }
@@ -46,6 +49,7 @@ const Left = () => {
   function onChangeTip(e) {
     setTip(e.target.value);
     setCustomTip("");
+    setDisabled(false);
   }
 
   return (

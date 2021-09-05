@@ -16,6 +16,8 @@ const Right = () => {
     setTotal,
     customTip,
     setCustomTip,
+    disabled,
+    setDisabled,
   } = calcStore;
 
   useEffect(() => {
@@ -41,10 +43,7 @@ const Right = () => {
     setTipAmount(0);
     setTotal(0);
     setCustomTip("");
-  };
-
-  const checkDisabled = () => {
-    return false;
+    setDisabled(true);
   };
 
   return (
@@ -67,7 +66,7 @@ const Right = () => {
         <h1>${total.toFixed(2)}</h1>
       </div>
 
-      <button disabled={checkDisabled} onClick={reset}>
+      <button disabled={disabled} onClick={reset}>
         RESET
       </button>
     </div>

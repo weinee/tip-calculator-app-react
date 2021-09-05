@@ -44,6 +44,11 @@ class CalcModel {
   setTotal = (total) => {
     this.total = total;
   };
+
+  disabled = true;
+  setDisabled = (disabled) => {
+    this.disabled = disabled;
+  };
 }
 
 export const calcStore = new CalcModel();
