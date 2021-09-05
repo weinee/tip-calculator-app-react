@@ -17,6 +17,8 @@ const Left = () => {
     setCustomTip,
     error,
     setError,
+    billError,
+    setBillError,
   } = calcStore;
 
   function onChangePeople(e) {
@@ -30,10 +32,24 @@ const Left = () => {
     }
   }
 
+  function onChangeBill(e) {
+    if (e.target.value === "0") {
+      setBillError(true);
+    } else {
+      setBillError(false);
+      if (e.target.validity.valid) {
+        setBill(e.target.value);
+      }
+    }
+  }
+
   return (
     <div className="left-container">
       <label className="label">
-        Bill
+        <div className="label-title">
+          <text>Bill</text>
+          {billError && <text className="error">Can't be zero</text>}
+        </div>
         <div className="input-container">
           <img src={dollarIcon} alt="$" />
           <input
@@ -42,7 +58,7 @@ const Left = () => {
             min="0"
             step="0.01"
             value={bill}
-            onInput={(e) => e.target.validity.valid && setBill(e.target.value)}
+            onInput={(e) => onChangeBill(e)}
           />
         </div>
       </label>

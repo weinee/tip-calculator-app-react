@@ -10,7 +10,7 @@ class CalcModel {
     this.bill = bill;
   };
 
-  tip = 0;
+  tip = "";
   setTip = (tip) => {
     this.tip = tip;
   };
@@ -28,6 +28,11 @@ class CalcModel {
   error = "";
   setError = (error) => {
     this.error = error;
+  };
+
+  billError = "";
+  setBillError = (error) => {
+    this.billError = error;
   };
 
   tipAmount = 0;

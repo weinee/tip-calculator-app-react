@@ -18,10 +18,10 @@ const Right = () => {
 
   useEffect(() => {
     if (
-      bill !== 0 &&
+      bill !== "0" &&
       bill !== "" &&
-      tip !== 0 &&
-      noOfPeople !== 0 &&
+      tip !== "0" &&
+      noOfPeople !== "0" &&
       noOfPeople !== ""
     ) {
       const amount = (bill * (tip / 100)) / noOfPeople;
@@ -32,11 +32,15 @@ const Right = () => {
   }, [bill, tip, noOfPeople]);
 
   const reset = () => {
-    setBill(0);
-    setTip(0);
-    setNoOfPeople(0);
+    setBill("");
+    setTip("");
+    setNoOfPeople("");
     setTipAmount(0);
     setTotal(0);
+  };
+
+  const checkDisabled = () => {
+    return false;
   };
 
   return (
@@ -59,7 +63,9 @@ const Right = () => {
         <h1>${total.toFixed(2)}</h1>
       </div>
 
-      <button onClick={reset}>RESET</button>
+      <button disabled={checkDisabled} onClick={reset}>
+        RESET
+      </button>
     </div>
   );
 };
