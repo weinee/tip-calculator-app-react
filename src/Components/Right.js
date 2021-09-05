@@ -14,6 +14,8 @@ const Right = () => {
     setTipAmount,
     total,
     setTotal,
+    customTip,
+    setCustomTip,
   } = calcStore;
 
   useEffect(() => {
@@ -24,12 +26,13 @@ const Right = () => {
       noOfPeople !== "0" &&
       noOfPeople !== ""
     ) {
-      const amount = (bill * (tip / 100)) / noOfPeople;
+      const selectedTip = tip === "" ? customTip : tip;
+      const amount = (bill * (selectedTip / 100)) / noOfPeople;
       const totalPerPerson = bill / noOfPeople + amount;
       setTipAmount(amount);
       setTotal(totalPerPerson);
     }
-  }, [bill, tip, noOfPeople]);
+  }, [bill, tip, noOfPeople, customTip]);
 
   const reset = () => {
     setBill("");
@@ -37,6 +40,7 @@ const Right = () => {
     setNoOfPeople("");
     setTipAmount(0);
     setTotal(0);
+    setCustomTip("");
   };
 
   const checkDisabled = () => {

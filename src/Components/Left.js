@@ -43,6 +43,11 @@ const Left = () => {
     }
   }
 
+  function onChangeTip(e) {
+    setTip(e.target.value);
+    setCustomTip("");
+  }
+
   return (
     <div className="left-container">
       <label className="label">
@@ -68,45 +73,35 @@ const Left = () => {
           <button
             disabled={tip === "5"}
             value="5"
-            onClick={(e) => {
-              setTip(e.target.value);
-            }}
+            onClick={(e) => onChangeTip(e)}
           >
             5%
           </button>
           <button
             disabled={tip === "10"}
             value="10"
-            onClick={(e) => {
-              setTip(e.target.value);
-            }}
+            onClick={(e) => onChangeTip(e)}
           >
             10%
           </button>
           <button
             disabled={tip === "15"}
             value="15"
-            onClick={(e) => {
-              setTip(e.target.value);
-            }}
+            onClick={(e) => onChangeTip(e)}
           >
             15%
           </button>
           <button
             disabled={tip === "20"}
             value="20"
-            onClick={(e) => {
-              setTip(e.target.value);
-            }}
+            onClick={(e) => onChangeTip(e)}
           >
             20%
           </button>
           <button
             disabled={tip === "25"}
             value="25"
-            onClick={(e) => {
-              setTip(e.target.value);
-            }}
+            onClick={(e) => onChangeTip(e)}
           >
             25%
           </button>
@@ -116,9 +111,10 @@ const Left = () => {
             pattern="[0-9]*"
             placeholder="Custom"
             value={customTip}
-            onInput={(e) =>
-              e.target.validity.valid && setCustomTip(e.target.value)
-            }
+            onInput={(e) => {
+              setTip("");
+              e.target.validity.valid && setCustomTip(e.target.value);
+            }}
           />
         </div>
       </label>
