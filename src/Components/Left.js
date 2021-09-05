@@ -115,8 +115,8 @@ const Left = () => {
             pattern="[0-9]*"
             placeholder="Custom"
             value={customTip}
+            onClick={() => setTip("")}
             onInput={(e) => {
-              setTip("");
               e.target.validity.valid && setCustomTip(e.target.value);
             }}
           />
